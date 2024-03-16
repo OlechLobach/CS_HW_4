@@ -1,26 +1,31 @@
-﻿using DevicesLibrary;
+﻿using System;
+using DevicesLibrary;
 
-namespace DeviceApp
+namespace DevicesApp
 {
     class Program
     {
         static void Main()
         {
-            Device kettle = new Kettle("Electric kettle", "Capacity: 1.7L, Power: 1500W");
-            Device microwave = new Microwave("Microwave oven", "Capacity: 25L, Power: 1000W");
-            Device car = new Car("Electric car", "Range: 250 miles, Power: 150kW");
-            Device steamship = new Steamship("Steamship", "Speed: 25 knots, Capacity: 200 passengers");
+            Kettle kettle = new Kettle("Electric Kettle", "Capacity: 1.7L, Power: 1500W");
+            kettle.Show();
+            kettle.Desc();
+            kettle.Sound();
 
-            PlaySound(kettle);
-            PlaySound(microwave);
-            PlaySound(car);
-            PlaySound(steamship);
-        }
+            Microwave microwave = new Microwave("Microwave Oven", "Capacity: 20L, Power: 800W");
+            microwave.Show();
+            microwave.Desc();
+            microwave.Sound();
 
-        static void PlaySound(Device device)
-        {
-            Console.Write($"{device.Name} characteristics: {device.Characteristics}. ");
-            device.Sound();
+            Car car = new Car("Toyota Camry", "Engine: 2.5L, Power: 203hp");
+            car.Show();
+            car.Desc();
+            car.Sound();
+
+            Steamship steamship = new Steamship("Steamship Titanic", "Length: 269m, Capacity: 2435 passengers");
+            steamship.Show();
+            steamship.Desc();
+            steamship.Sound();
         }
     }
 }

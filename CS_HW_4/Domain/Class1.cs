@@ -17,6 +17,16 @@ namespace DevicesLibrary
         {
             Console.WriteLine("Device sound");
         }
+
+        public void Show()
+        {
+            Console.WriteLine($"Device name: {Name}");
+        }
+
+        public void Desc()
+        {
+            Console.WriteLine($"Device description: {Characteristics}");
+        }
     }
 
     public class Kettle : Device
